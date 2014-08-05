@@ -43,3 +43,10 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'jazz_hands'
+  gem 'annotate'
+end
+
+gem 'bootflat-rails'
