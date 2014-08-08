@@ -51,3 +51,6 @@ end
 
 gem 'bootflat-rails', '~> 0.1.8'
 gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-github'
