@@ -216,6 +216,7 @@ DEPENDENCIES
   bootflat-rails (~> 0.1.8)
   coffee-rails (~> 4.0.0)
   devise
+  hirb
   jazz_hands
   jbuilder (~> 1.2)
   jquery-rails

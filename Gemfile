@@ -47,6 +47,7 @@ end
 group :development do
   gem 'jazz_hands'
   gem 'annotate'
+  gem 'hirb'
 end
 
 gem 'bootflat-rails', '~> 0.1.8'
