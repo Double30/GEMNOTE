@@ -45,7 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :development do
-  gem 'jazz_hands'
+  gem 'pry'
   gem 'annotate'
   gem 'hirb'
 end
