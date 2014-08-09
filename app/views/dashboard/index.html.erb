@@ -1,0 +1,2 @@
+<h3><%= flash[:notice] if flash[:notice] %></h3>
+<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>

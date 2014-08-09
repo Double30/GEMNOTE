@@ -7,7 +7,7 @@ gem 'rails', '4.0.0'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem "sass-rails", github: 'zakelfassi/sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -47,6 +47,11 @@ end
 group :development do
   gem 'jazz_hands'
   gem 'annotate'
+  gem 'hirb'
 end
 
-gem 'bootflat-rails'
+gem 'bootflat-rails', '~> 0.1.8'
+gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-github'
