@@ -18,6 +18,9 @@
 #  provider               :string(255)
 #  uid                    :string(255)
 #  oauth_token            :string(255)
+#  image                  :string(255)
+#  url                    :string(255)
+#  name                   :string(255)
 #
 
 class User < ActiveRecord::Base
