@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810030644) do
+ActiveRecord::Schema.define(version: 20140810034940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140810030644) do
     t.datetime "updated_at"
   end
 
+  add_index "categories", ["user_id", "name"], name: "index_categories_on_user_id_and_name", unique: true, using: :btree
   add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
 
   create_table "notes", force: true do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140810030644) do
     t.datetime "updated_at"
   end
 
+  add_index "notes", ["repository_id", "name"], name: "index_notes_on_repository_id_and_name", unique: true, using: :btree
   add_index "notes", ["repository_id"], name: "index_notes_on_repository_id", using: :btree
 
   create_table "repositories", force: true do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema.define(version: 20140810030644) do
   end
 
   add_index "repositories", ["category_id"], name: "index_repositories_on_category_id", using: :btree
+  add_index "repositories", ["user_id", "name"], name: "index_repositories_on_user_id_and_name", unique: true, using: :btree
   add_index "repositories", ["user_id"], name: "index_repositories_on_user_id", using: :btree
 
   create_table "repositories_tags", id: false, force: true do |t|
@@ -68,6 +71,7 @@ ActiveRecord::Schema.define(version: 20140810030644) do
     t.datetime "updated_at"
   end
 
+  add_index "tags", ["user_id", "name"], name: "index_tags_on_user_id_and_name", unique: true, using: :btree
   add_index "tags", ["user_id"], name: "index_tags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

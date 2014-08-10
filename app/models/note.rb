@@ -12,4 +12,5 @@
 
 class Note < ActiveRecord::Base
   belongs_to :repository
+  validates :name, uniqueness: {scope: :repository_id }
 end

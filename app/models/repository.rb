@@ -16,5 +16,6 @@
 class Repository < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
+  validates :name, uniqueness: {scope: :user_id}, presence: true
   has_many :tags, through :repositories_tags
 end

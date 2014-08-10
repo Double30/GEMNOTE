@@ -13,4 +13,5 @@
 class Category < ActiveRecord::Base
   belongs_to :user
   has_many :repositories
+  validates :name, uniqueness: {scope: :user_id, case_sensitive: false}, presence: true
 end
