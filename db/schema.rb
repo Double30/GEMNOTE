@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810034940) do
+ActiveRecord::Schema.define(version: 20140810160233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 20140810034940) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "repositories"
+    t.integer  "github_id"
+    t.text     "github_description"
+    t.string   "full_name"
+    t.integer  "stargazers_count"
+    t.integer  "owner_id"
+    t.string   "owner_name"
   end
 
   add_index "repositories", ["category_id"], name: "index_repositories_on_category_id", using: :btree

@@ -55,3 +55,5 @@ gem 'devise'
 
 gem 'omniauth'
 gem 'omniauth-github'
+
+gem "octokit", "~> 3.0"
