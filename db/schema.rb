@@ -11,10 +11,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809031656) do
+ActiveRecord::Schema.define(version: 20140810034940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.integer  "order"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["user_id", "name"], name: "index_categories_on_user_id_and_name", unique: true, using: :btree
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
+
+  create_table "notes", force: true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.integer  "repository_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["repository_id", "name"], name: "index_notes_on_repository_id_and_name", unique: true, using: :btree
+  add_index "notes", ["repository_id"], name: "index_notes_on_repository_id", using: :btree
+
+  create_table "repositories", force: true do |t|
+    t.string   "name"
+    t.integer  "star"
+    t.string   "url"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "repositories", ["category_id"], name: "index_repositories_on_category_id", using: :btree
+  add_index "repositories", ["user_id", "name"], name: "index_repositories_on_user_id_and_name", unique: true, using: :btree
+  add_index "repositories", ["user_id"], name: "index_repositories_on_user_id", using: :btree
+
+  create_table "repositories_tags", id: false, force: true do |t|
+    t.integer  "repository_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "repositories_tags", ["repository_id", "tag_id"], name: "index_repositories_tags_on_repository_id_and_tag_id", unique: true, using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.string   "image"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["user_id", "name"], name: "index_tags_on_user_id_and_name", unique: true, using: :btree
+  add_index "tags", ["user_id"], name: "index_tags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
