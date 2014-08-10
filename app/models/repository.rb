@@ -15,4 +15,6 @@
 
 class Repository < ActiveRecord::Base
   belongs_to :user
+  belongs_to :category
+  has_many :tags, through :repositories_tags
 end
