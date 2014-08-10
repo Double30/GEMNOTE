@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="search"></div>
+  <ul class="sidebarInfo">
+    <li>
+      <h2>Categories</h2>
+      <ul class="sidebarItem">
+        <% all_categories.each do |cat| %>
+        <li>
+          <%= link_to "#{cat.name}", category_path(:id => cat.id) %>
+        </li>
+        <% end %>
+      </ul>
+    </li>
+    <li>
+      <h2>Settings</h2>
+      <ul class="sidebarItem">
+        <li>
+          <%= link_to "Sign In", user_omniauth_authorize_path(:github) %>
+        </li>
+        <li><%= link_to 'Profile' %></li>
+        <li><%= link_to 'Settings' %></li>
+        <li><%= link_to 'Log Out' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
