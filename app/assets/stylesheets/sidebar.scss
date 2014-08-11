@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .container {
-  position: relative;
+  position: absolute;
   left: 268px;
 }
 .sidebar {
@@ -16,6 +16,9 @@
   position: fixed;
   top: 0px;
   left: 0px;
+  .sidebarNav {
+    padding-bottom: 20px;
+  }
   .sidebarInfo {
     height: 100%;
     overflow-x:hidden;
