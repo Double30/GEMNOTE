@@ -1,5 +1,6 @@
 class RepositoriesController < ApplicationController
   def index
-    @repos = current_user.github.starred
+    Repository.refresh_by_user(current_user)
+    @repos = current_user.repositories
   end
 end
