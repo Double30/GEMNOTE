@@ -13,6 +13,6 @@
 
 class Tag < ActiveRecord::Base
   belongs_to :user
-  has_many :repositories, through :repositories_tags
+  has_many :repositories, through: :repositories_tags
   validates :name, uniqueness: {scope: :user_id, case_sensitive: false }, presence: true
 end

@@ -22,7 +22,7 @@
 #  url                    :string(255)
 #  name                   :string(255)
 #
-
+require 'Octokit'
 class User < ActiveRecord::Base
   has_many :repositories
   has_many :categories
@@ -41,5 +41,9 @@ class User < ActiveRecord::Base
       user.url = auth.info.urls.GitHub
       user.oauth_token = auth.credentials.token
     end
+  end
+
+  def github
+    Octokit::Client.new(:access_token => oauth_token, auto_traversal: true, per_page: 100)
   end
 end

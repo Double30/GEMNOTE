@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810034940) do
+ActiveRecord::Schema.define(version: 20140811161733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,17 +40,24 @@ ActiveRecord::Schema.define(version: 20140810034940) do
 
   create_table "repositories", force: true do |t|
     t.string   "name"
-    t.integer  "star"
     t.string   "url"
     t.text     "description"
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "github_id"
+    t.text     "github_description"
+    t.string   "full_name"
+    t.integer  "stargazers_count"
+    t.integer  "owner_id"
+    t.string   "owner_name"
+    t.boolean  "is_delete"
+    t.boolean  "is_new"
   end
 
   add_index "repositories", ["category_id"], name: "index_repositories_on_category_id", using: :btree
-  add_index "repositories", ["user_id", "name"], name: "index_repositories_on_user_id_and_name", unique: true, using: :btree
+  add_index "repositories", ["user_id", "github_id"], name: "index_repositories_on_user_id_and_github_id", unique: true, using: :btree
   add_index "repositories", ["user_id"], name: "index_repositories_on_user_id", using: :btree
 
   create_table "repositories_tags", id: false, force: true do |t|
