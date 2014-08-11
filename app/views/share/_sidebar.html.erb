@@ -1,5 +1,10 @@
 <div class="sidebar">
-  <div class="search"></div>
+  <div class="search">
+    <%= search_form_for @q do |f| %>
+      <%= f.text_field :name_cont, placeholder: 'Search Star..' %>
+      <%= f.submit '送出' %>
+    <% end %>
+  </div>
   <ul class="sidebarInfo">
     <li>
       <h2>Categories</h2>

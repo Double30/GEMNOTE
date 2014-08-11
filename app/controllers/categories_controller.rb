@@ -3,6 +3,8 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @q = Category.search(params[:q])
+    @categories = @q.result(distinct: true)
   end
 
   def show
