@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  left: 268px;
+}
+.sidebar {
+  width: 268px;
+  height: 100%;
+  float: left;
+  background-color: #F5F7FA;
+  padding: 15px 10px;
+  line-height: 1;
+  font-weight: normal;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  .sidebarInfo {
+    height: 100%;
+    overflow-x:hidden;
+    overflow-y: scroll;
+  }
+  .form-search {
+    margin-bottom: 35px;
+    .input-group-btn {
+      position: absolute;
+      top: 0;
+      right: -2px;
+    }
+  }
+}
