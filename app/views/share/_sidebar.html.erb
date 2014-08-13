@@ -1,37 +1,35 @@
 <div class="sidebar">
-  <div class="sidebarNav">
+  <h1>G Box</h1>
+  <!-- <div class="sidebarNav">
     <button type="button" class="btn btn-primary">
     <i class="glyphicon glyphicon-th-large"></i>
   </button>
-  </div>
+  </div> -->
   <div class="sidebarInfo">
-    <div class="input-group form-search">
-      <%= search_form_for @q do |f| %>
-        <%= f.text_field :name_cont, placeholder: 'Search Star..', class: "form-control search-query" %>
+    <!-- <div class="input-group form-search">
+      <%#= search_form_for @q do |f| %>
+        <%#= f.text_field :name_cont, placeholder: 'Search Star..', class: "form-control search-query" %>
         <span class="input-group-btn">
-          <%= f.submit 'Search', class: "btn btn-primary" %>
+          <%#= f.submit 'Search', class: "btn btn-primary" %>
         </span>
-      <% end %>
+      <%# end %>
+    </div> -->
+    <div class="list-group">
+      <li class="list-group-item">Repositories</li>
     </div>
-
     <ul class="list-group">
-      <li class="list-group-item active">Categories</li>
+      <li class="list-group-item"><%= link_to 'Categories', categories_path %></li>
       <% current_user_categories.each do |cat| %>
         <li class= "list-group-item">
           <span class="badge badge-default">30</span>
           <%= link_to "#{cat.name}", category_path(:id => cat.id) %>
         </li>
       <% end %>
-      <li class="list-group-item">
-        <%= link_to 'All Categories..', categories_path %>
-      </li>
     </ul>
-
-    <div class="list-group">
-      <a href="##" class="list-group-item active">Settings</a>
-      <%= link_to 'Profile', root_path, class: "list-group-item" %>
-      <%= link_to 'Settings', root_path, class: "list-group-item" %>
-      <%= link_to 'Log Out', root_path, class: "list-group-item" %>
+    <div class="fixedProfile">
+      <div class="profilePic"><%= image_tag current_user.image || "http://goo.gl/9ZO7Ie", style: "width: 50px;" %></div>
+      <div class="profileName"><%= current_user.name %></div>
+      <div class="profileMore">settings..</div>
     </div>
   </div>
 </div>
