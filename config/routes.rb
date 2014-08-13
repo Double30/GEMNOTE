@@ -3,5 +3,5 @@ Gbox::Application.routes.draw do
 
   root 'dashboard#index'
 
-  resources :categories
+  resources :categories, :only => [:index,:show]
 end

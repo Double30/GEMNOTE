@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gbox</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p>請先登入：</p>
+<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %>
+<p>or test for other account：</p>
+<%= link_to "Sign in with devise", new_user_session_path %>
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

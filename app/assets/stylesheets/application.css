@@ -10,5 +10,5 @@
  *
  *= require bootflat
  *= require_self
- *= require_tree .
+ *= require sidebar
  */

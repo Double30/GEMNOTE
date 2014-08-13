@@ -16,7 +16,7 @@
 
     <ul class="list-group">
       <li class="list-group-item active">Categories</li>
-      <% all_categories.each do |cat| %>
+      <% current_user_categories.each do |cat| %>
         <li class= "list-group-item">
           <span class="badge badge-default">30</span>
           <%= link_to "#{cat.name}", category_path(:id => cat.id) %>
@@ -29,7 +29,6 @@
 
     <div class="list-group">
       <a href="##" class="list-group-item active">Settings</a>
-      <%= link_to "Sign In", user_omniauth_authorize_path(:github), class: "list-group-item" %>
       <%= link_to 'Profile', root_path, class: "list-group-item" %>
       <%= link_to 'Settings', root_path, class: "list-group-item" %>
       <%= link_to 'Log Out', root_path, class: "list-group-item" %>
