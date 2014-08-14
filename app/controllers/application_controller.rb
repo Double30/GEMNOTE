@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   private
 
   def app_layout
-    current_user.present? ? "application" : "unlogin"
+    user_signed_in? ? "application" : "unlogin"
   end
 end
