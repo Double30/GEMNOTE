@@ -7,6 +7,7 @@
     <li class="list-group-item list-group-item-default">
       <!-- <a href=""><%= repo.owner_name %></a>/ -->
       <a href="<%= repo.url %>"><%= repo.name %></a>
+      <%= link_to '查看', repo %>
       <span class="badge badge-default"><%= repo.stargazers_count %></span>
     </li>
   <% end %>
