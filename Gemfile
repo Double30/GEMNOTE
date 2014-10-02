@@ -38,3 +38,6 @@ gem 'omniauth-github'
 
 gem "octokit", "~> 3.0"
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
+
+# Editor
+gem 'best_in_place', :git => 'https://github.com/bernat/best_in_place.git'

@@ -2,9 +2,9 @@
   <h1><%= @repo.name %></h1>
   <div><%= @repo.github_description %></div>
 </div>
-<div class="discription">
+<div class="description">
   <h3>描述</h3>
-  <%= @repo.github_description %>
+  <%= best_in_place @repo, :description, type: :textarea %>
 </div>
 <div class="notes">
 

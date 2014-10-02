@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require icheck.min
+//= require best_in_place
+//= require_self
+
+$().ready(function() {
+  $('.best_in_place').best_in_place()
+})
