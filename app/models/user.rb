@@ -24,7 +24,7 @@
 #
 require 'Octokit'
 class User < ActiveRecord::Base
-  has_many :repositories
+  has_many :stars_repo, class: :repository, through: :star
   has_many :categories
   has_many :tags
   # Include default devise modules. Others available are:

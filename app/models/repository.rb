@@ -6,8 +6,6 @@
 #  name               :string(255)
 #  url                :string(255)
 #  description        :text
-#  user_id            :integer
-#  category_id        :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #  github_id          :integer
@@ -16,15 +14,12 @@
 #  stargazers_count   :integer
 #  owner_id           :integer
 #  owner_name         :string(255)
-#  is_delete          :boolean
-#  is_new             :boolean
 #
 
 class Repository < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :category
   has_many :notes
-  has_many :tags, through: :repositories_tags
+  has_many :stargazers, class: :user, , through: :star
+
   validates :github_id, uniqueness: {scope: :user_id}, presence: true
 
   def self.refresh_by_user(user)
