@@ -23,8 +23,9 @@
 class Repository < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
-  validates :github_id, uniqueness: {scope: :user_id}, presence: true
+  has_many :notes
   has_many :tags, through: :repositories_tags
+  validates :github_id, uniqueness: {scope: :user_id}, presence: true
 
   def self.refresh_by_user(user)
     repos = user.github.starred.map do |github_repo|

@@ -32,7 +32,7 @@ end
 
 gem 'bootflat-rails', '~> 0.1.8'
 gem 'devise'
-
+gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-github'
 

@@ -6,5 +6,8 @@ Gbox::Application.routes.draw do
   resources :repositories do
     resources :notes
   end
+
+  resources :notes
+
   resources :categories, :only => [:index, :show]
 end
