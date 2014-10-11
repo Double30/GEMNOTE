@@ -18,7 +18,7 @@
 
 class Repository < ActiveRecord::Base
   has_many :notes
-  has_many :stargazers, class: :user, , through: :star
+  has_many :stargazers, class_name: 'User', through: :star
 
   validates :github_id, uniqueness: {scope: :user_id}, presence: true
 
