@@ -15,7 +15,7 @@
 //= require bootstrap
 //= require icheck.min
 //= require best_in_place
-//= require_tree ./markdown
+//= require jquery-ui-widget
 //= require_self
 
 $().ready(function() {
