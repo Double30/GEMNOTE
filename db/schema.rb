@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811161733) do
+ActiveRecord::Schema.define(version: 20141011133857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,22 @@ ActiveRecord::Schema.define(version: 20140811161733) do
   end
 
   add_index "repositories_tags", ["repository_id", "tag_id"], name: "index_repositories_tags_on_repository_id_and_tag_id", unique: true, using: :btree
+
+  create_table "stars", force: true do |t|
+    t.integer  "repository_id"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.text     "description"
+    t.boolean  "is_new"
+    t.boolean  "is_deleted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stars", ["category_id"], name: "index_stars_on_category_id", using: :btree
+  add_index "stars", ["repository_id"], name: "index_stars_on_repository_id", using: :btree
+  add_index "stars", ["user_id", "repository_id"], name: "index_stars_on_user_id_and_repository_id", unique: true, using: :btree
+  add_index "stars", ["user_id"], name: "index_stars_on_user_id", using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "name"
