@@ -1,13 +1,13 @@
 class NotesController < ApplicationController
-  before_action :find_starred_repo, only: :new
+  before_action :find_starred_repo, only: [:new, :create]
   def new
     @note = @star.notes.build
   end
 
   def create
-    @note = Note.new(note_params)
+    @note = @star.notes.build(note_params)
     if @note.save
-      redirect_to @note
+      redirect_to @star
     else
       render :new
     end
@@ -19,7 +19,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:notes).permit(:star_id, :content, :name)
+    params.require(:note).permit(:star_id, :content, :name)
   end
 
 end

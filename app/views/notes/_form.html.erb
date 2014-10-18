@@ -1,4 +1,4 @@
-<%= simple_form_for @note do |f| %>
+<%= simple_form_for [@star, @note] do |f| %>
   <%= f.input :name %>
   <%= f.input :content %>
   <%= f.button :submit %>

@@ -12,5 +12,5 @@
 
 class Note < ActiveRecord::Base
   belongs_to :star
-  validates :name, uniqueness: {scope: :star_id }
+  validates :name, uniqueness: {scope: :star_id }, presence: true
 end
