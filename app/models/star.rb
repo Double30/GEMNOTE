@@ -22,4 +22,5 @@ class Star < ActiveRecord::Base
   delegate :name, :url, :github_id, :github_description, :full_name,
     :stargazers_count, :owner_id, :owner_name,
     to: :repository
+  default_scope order('updated_at DESC')
 end
