@@ -11,6 +11,6 @@
 #
 
 class Note < ActiveRecord::Base
-  belongs_to :repository
-  validates :name, uniqueness: {scope: :repository_id }
+  belongs_to :star
+  validates :name, uniqueness: {scope: :star_id }
 end

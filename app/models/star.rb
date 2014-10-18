@@ -18,6 +18,7 @@ class Star < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :tags, through: :repositories_tags
+  has_many :notes
   delegate :name, :url, :github_id, :github_description, :full_name,
     :stargazers_count, :owner_id, :owner_name,
     to: :repository

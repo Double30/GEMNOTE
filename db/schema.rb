@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018111010) do
+ActiveRecord::Schema.define(version: 20141018111652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 20141018111010) do
   create_table "notes", force: true do |t|
     t.string   "name"
     t.text     "content"
-    t.integer  "repository_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "star_id"
   end
 
-  add_index "notes", ["repository_id", "name"], name: "index_notes_on_repository_id_and_name", unique: true, using: :btree
-  add_index "notes", ["repository_id"], name: "index_notes_on_repository_id", using: :btree
+  add_index "notes", ["star_id", "name"], name: "index_notes_on_star_id_and_name", unique: true, using: :btree
+  add_index "notes", ["star_id"], name: "index_notes_on_star_id", unique: true, using: :btree
 
   create_table "repositories", force: true do |t|
     t.string   "name"

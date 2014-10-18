@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :find_starred_repo, only: :new
   def new
-    @note = @repo.notes.build
+    @note = @star.notes.build
   end
 
   def create
@@ -15,7 +15,7 @@ class NotesController < ApplicationController
 
   private
   def find_starred_repo
-    @repo = Star.find(params[:star_id])
+    @star = Star.find(params[:star_id])
   end
 
   def note_params
