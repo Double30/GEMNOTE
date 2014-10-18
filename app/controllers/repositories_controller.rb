@@ -1,7 +1,7 @@
 class RepositoriesController < ApplicationController
   before_action :set_repo, only: [ :show, :update ]
   def index
-    # Repository.refresh_by_user(current_user)
+    current_user.update_starred_repo
     @repos = current_user.repositories
   end
 

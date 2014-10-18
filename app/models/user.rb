@@ -24,7 +24,9 @@
 #
 require 'Octokit'
 class User < ActiveRecord::Base
-  has_many :stars_repo, class_name: 'Repository', through: :star
+  has_many :repositories, through: :stars
+  has_many :stars
+
   has_many :categories
   has_many :tags
   # Include default devise modules. Others available are:
@@ -45,5 +47,23 @@ class User < ActiveRecord::Base
 
   def github
     Octokit::Client.new(:access_token => oauth_token, auto_traversal: true, per_page: 100)
+  end
+
+  def update_starred_repo
+    repos = github.starred.map do |github_repo|
+      repo = Repository.find_or_create_by(github_id: github_repo.id) do |repo|
+        repo.name               = github_repo.name
+        repo.full_name          = github_repo.full_name
+        repo.url                = github_repo.html_url
+        repo.github_description = github_repo.description
+        repo.stargazers_count   = github_repo.stargazers_count
+        repo.owner_id           = github_repo.owner.id
+        repo.owner_name         = github_repo.owner.login
+      end
+
+      starred_repo = repo.stars.find_or_initialize_by(user_id: id)
+      starred_repo.is_new = true if starred_repo.new_record?
+      starred_repo.save
+    end
   end
 end
