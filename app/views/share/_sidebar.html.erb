@@ -1,21 +1,8 @@
 <div class="sidebar">
   <h1>G Box</h1>
-  <!-- <div class="sidebarNav">
-    <button type="button" class="btn btn-primary">
-    <i class="glyphicon glyphicon-th-large"></i>
-  </button>
-  </div> -->
   <div class="sidebarInfo">
-    <!-- <div class="input-group form-search">
-      <%#= search_form_for @q do |f| %>
-        <%#= f.text_field :name_cont, placeholder: 'Search Star..', class: "form-control search-query" %>
-        <span class="input-group-btn">
-          <%#= f.submit 'Search', class: "btn btn-primary" %>
-        </span>
-      <%# end %>
-    </div> -->
     <div class="list-group">
-      <li class="list-group-item"><a href="<%= repositories_path %>">Repositories</a></li>
+      <li class="list-group-item"><a href="<%= stars_path %>">Repositories</a></li>
     </div>
     <ul class="list-group">
       <li class="list-group-item"><%= link_to 'Categories', categories_path %></li>

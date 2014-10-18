@@ -1,0 +1,12 @@
+<div class="info-bar">
+  <h1><%= @star.name %></h1>
+  <div><%= @star.github_description %></div>
+</div>
+<div class="description">
+  <h3>描述</h3>
+  <%= best_in_place @star, :description, type: :textarea %>
+</div>
+<div class="notes">
+  <h3>Note</h3>
+  <a href="<%= new_star_note_path(@star) %>">新增</a>
+</div>

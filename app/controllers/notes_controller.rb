@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :find_repo, only: :new
+  before_action :find_starred_repo, only: :new
   def new
     @note = @repo.notes.build
   end
@@ -14,12 +14,12 @@ class NotesController < ApplicationController
   end
 
   private
-  def find_repo
-    @repo = Repository.find(params[:repository_id])
+  def find_starred_repo
+    @repo = Star.find(params[:star_id])
   end
 
   def note_params
-    params.require(:notes).permit(:repository_id, :content, :name)
+    params.require(:notes).permit(:star_id, :content, :name)
   end
 
 end

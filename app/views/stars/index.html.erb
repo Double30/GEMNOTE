@@ -1,0 +1,14 @@
+<h1>Stars</h1>
+<p>Find me in app/views/stars/index.html.erb</p>
+
+
+<ul class="list-group">
+  <% @stars.each do |star| %>
+    <li class="list-group-item list-group-item-default">
+      <!-- <a href=""><%= star.owner_name %></a>/ -->
+      <a href="<%= star.url %>"><%= star.name %></a>
+      <%= link_to '查看', star %>
+      <span class="badge badge-default"><%= star.stargazers_count %></span>
+    </li>
+  <% end %>
+</ul>
