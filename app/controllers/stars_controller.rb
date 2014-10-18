@@ -6,7 +6,7 @@ class StarsController < ApplicationController
   end
 
   def show
-
+    @notes = @star.notes
   end
 
   def update

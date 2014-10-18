@@ -4,6 +4,10 @@ class NotesController < ApplicationController
     @note = @star.notes.build
   end
 
+  def show
+    @note = Note.find(params[:id])
+  end
+
   def create
     @note = @star.notes.build(note_params)
     if @note.save

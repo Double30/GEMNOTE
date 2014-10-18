@@ -9,4 +9,12 @@
 <div class="notes">
   <h3>Note</h3>
   <a href="<%= new_star_note_path(@star) %>">新增</a>
+  <ul>
+    <% @notes.each do |note| %>
+      <li>
+        <div><%= link_to note.name, note_path(note) %></div>
+        <div><%= note.content %></div>
+      </li>
+    <% end %>
+  </ul>
 </div>
