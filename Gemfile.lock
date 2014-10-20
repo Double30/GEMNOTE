@@ -154,6 +154,8 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.2.0)
+    rouge (1.5.1)
     sass (3.3.14)
     sawyer (0.5.4)
       addressable (~> 2.3.5)
@@ -208,6 +210,8 @@ DEPENDENCIES
   pry
   rails (= 4.0.0)
   ransack!
+  redcarpet
+  rouge
   sass-rails!
   sdoc
   simple_form
