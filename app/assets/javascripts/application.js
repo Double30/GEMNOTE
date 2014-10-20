@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree ./editor
 //= require bootstrap
 //= require icheck.min
 //= require best_in_place

@@ -13,7 +13,7 @@
     <% @notes.each do |note| %>
       <li>
         <div><%= link_to note.name, note_path(note) %></div>
-        <div><%= note.content %></div>
+        <div><%= markdown(note.content) %></div>
       </li>
     <% end %>
   </ul>

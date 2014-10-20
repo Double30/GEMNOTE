@@ -17,6 +17,20 @@ class NotesController < ApplicationController
     end
   end
 
+  def edit
+    @note = Note.find(params[:id])
+  end
+
+  def update
+    @note = Note.find(params[:id])
+    @note.update(note_params)
+    if @note.save
+      redirect_to @note
+    else
+      render :edit
+    end
+  end
+
   private
   def find_starred_repo
     @star = Star.find(params[:star_id])
