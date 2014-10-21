@@ -30,6 +30,9 @@ group :development do
   gem 'hirb'
 end
 
+# css
+gem 'compass-rails'
+
 gem 'bootflat-rails', '~> 0.1.8'
 gem 'devise'
 gem 'simple_form'

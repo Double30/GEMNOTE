@@ -1,15 +1,16 @@
+$base-font-size:   $b-fontSize
+$base-line-height: $b-lineHeight
 // *************************************
 //
 //   Base
 //
 // *************************************
++establish-baseline
 
 html
   background: $c-background
   color: $c-text
   font-family: $b-fontFamily
-  font-size: $b-fontSize
-  line-height: $b-lineHeight
 
 body
   font-size: 100%
@@ -33,15 +34,21 @@ h2, .h2,
 h3, .h3,
 h4, .h4
   font-family: $b-fontFamily-heading
+  margin: 0
+  padding: 0
 
 h1, .h1
-  +verticae-rhythm(3.375, 4, 4, 2)
+  +adjust-font-size-to(48px)
+  // +rhythm(3, 1, 0, 2, 48px)
 h2, .h2
-  +verticae-rhythm(2.25, 4, 4, 2)
+  +adjust-font-size-to(32px)
+  // +rhythm(2, 1, 0, 2, 32px)
 h3, .h3
-  +verticae-rhythm(1.5, 2, 2, 2)
+  +adjust-font-size-to(24px)
+  // +rhythm(2, 1, 0, 1, 24px)
 h4, .h4
-  +verticae-rhythm(1, 2, 2, 2)
+  +adjust-font-size-to(16px)
+  // +rhythm(1, 1, 0, 1, 16px)
 
 hr
   border: 1px solid
