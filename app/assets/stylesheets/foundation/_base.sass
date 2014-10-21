@@ -18,9 +18,9 @@ body
 //   Block Content
 // -------------------------------------
 
-ul, p
+p, ul, ol, pre, table, blockquote
   margin-bottom: $b-space
-  margin-top: 0
+  margin-top: $b-space
 
 li
   margin-bottom: $b-space-s
@@ -33,7 +33,31 @@ h2, .h2,
 h3, .h3,
 h4, .h4
   font-family: $b-fontFamily-heading
-  font-weight: bold
-  line-height: 1.2
-  margin-bottom: $b-space-s
+
+h1, .h1
+  +verticae-rhythm(3.375, 4, 4, 2)
+h2, .h2
+  +verticae-rhythm(2.25, 4, 4, 2)
+h3, .h3
+  +verticae-rhythm(1.5, 2, 2, 2)
+h4, .h4
+  +verticae-rhythm(1, 2, 2, 2)
+
+hr
+  border: 1px solid
+  margin: -1px 0
+
+ul ul, ol ol, ul ol, ol ul
   margin-top: 0
+  margin-bottom: 0
+
+b, strong, em, small, code
+  line-height: 1
+
+sup, sub
+  vertical-align: baseline
+  position: relative
+  top: -0.4em
+
+sub
+  top: 0.4em

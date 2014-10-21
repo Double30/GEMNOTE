@@ -1,2 +1,9 @@
 @function em($px, $base: $b-fontSize)
   @return ($px / $base) * 1em
+
+=verticae-rhythm($font-size-base, $line-height-base, $top-base, $bottom-base)
+  $font-size: $font-size-base * $b-fontSize
+  font-size:     em($font-size)
+  line-height:   em($line-height-base * $b-fontSize, $font-size)
+  margin-top:    em($top-base * $b-fontSize, $font-size)
+  margin-bottom: em($bottom-base * $b-fontSize, $font-size)
