@@ -1,44 +1,38 @@
 // *************************************
 //
-//   Sidebar
-//   -> Revealed navgation menu
+//   Main
+//   -> Content Wrapper
 //
 // *************************************
 
-.sidebar
-  background-color: $sidebar-background-color
+.main
+  background-color: $main-background-color
   height: 100%
-  left: 0
+  margin-left: $sidebar-width
   position: fixed
-  width: $sidebar-width
+  width: 100%
+  transition: margin-left 0.3s
 
 // -------------------------------------
 //   Modifiers
 // -------------------------------------
 
+.main--push
+  margin-left: $sidebar-width + $subSidebar-width
+
 // -------------------------------------
 //   States
 // -------------------------------------
+
 
 // -------------------------------------
 //   Context
 // -------------------------------------
 
-.has-subSidebar
-  padding-right: $subSidebar-width
+
 
 // -------------------------------------
 //   Scaffolding
 // -------------------------------------
-
-// ----- variables ----- //
-
-$sidebar-header-height: 60px
-
-// ----- Header ----- //
-
-.sidebar-header
-  color: $c-text-invert
-  height: $sidebar-header-height
-  width: 100%
-  margin-bottom: $b-space
+.main-header
+  @extend .sidebar-header
