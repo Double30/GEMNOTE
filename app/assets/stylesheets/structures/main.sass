@@ -1,0 +1,38 @@
+// *************************************
+//
+//   Main
+//   -> Content Wrapper
+//
+// *************************************
+
+.main
+  background-color: $main-background-color
+  height: 100%
+  margin-left: $sidebar-width
+  position: fixed
+  width: 100%
+  transition: margin-left 0.3s
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+.main--push
+  margin-left: $sidebar-width + $subSidebar-width
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+.main-header
+  @extend .sidebar-header

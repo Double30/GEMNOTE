@@ -1,22 +1,10 @@
-<div class="sidebar">
-  <h1>G Box</h1>
-  <div class="sidebarInfo">
-    <div class="list-group">
-      <li class="list-group-item"><a href="<%= stars_path %>">Repositories</a></li>
-    </div>
-    <ul class="list-group">
-      <li class="list-group-item"><%= link_to 'Categories', categories_path %></li>
-      <% current_user_categories.each do |cat| %>
-        <li class= "list-group-item">
-          <span class="badge badge-default">30</span>
-          <%= link_to "#{cat.name}", category_path(:id => cat.id) %>
-        </li>
-      <% end %>
-    </ul>
-    <div class="fixedProfile">
-      <div class="profilePic"><%= image_tag current_user.image || "http://goo.gl/9ZO7Ie", style: "width: 50px;" %></div>
-      <div class="profileName"><%= current_user.name %></div>
-      <div class="profileMore">settings..</div>
-    </div>
+<div class="sidebar has-subSidebar">
+  <div class="sidebar-header">
+    <h1>G Box</h1>
+  </div>
+  <a href="<%= stars_path %>">Repositories</a>
+
+  <div class="subSidebar">
+    <div class="subSidebar-header"></div>
   </div>
 </div>

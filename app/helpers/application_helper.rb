@@ -16,6 +16,6 @@ module ApplicationHelper
       superscript:        true
     }
     markdown = Redcarpet::Markdown.new(renderer, options)
-    markdown.render(text).html_safe
+    raw markdown.render(text)
   end
 end
