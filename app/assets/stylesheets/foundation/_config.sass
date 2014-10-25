@@ -13,10 +13,13 @@ $scarlet: #FF3F00
 $white: #FFF
 $endeavour: #265B8C
 
+$bunting: #2A3744
+$whitesmoke: #F5F6F5
+
 // ----- Base ----- //
 
-$c-background-invert: $white
-$c-background: $gainsboro
+$c-background-invert: $bunting
+$c-background: $whitesmoke
 $c-border: lighten($jet, 30%)
 $c-error: $scarlet
 $c-highlight: $cerulean
@@ -34,15 +37,15 @@ $c-warning: $gold
 
 // Main
 
-$main-background-color: $white
+$main-background-color: $c-background
 
 // Sidebar
 
-$sidebar-background-color: $endeavour
+$sidebar-background-color: $c-background-invert
 
 // SubSidebar
 
-$subSidebar-background-color: $jet
+$subSidebar-background-color: darken($c-background-invert,5%)
 
 // -------------------------------------
 //   Base
