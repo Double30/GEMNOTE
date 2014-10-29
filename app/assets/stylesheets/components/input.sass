@@ -1,29 +1,27 @@
 // *************************************
 //
-//   Main
-//   -> Content Wrapper
+//   Input
+//   -> input style.
 //
 // *************************************
 
-.main
-  background-color: $main-background-color
-  height: 100%
-  margin-left: $sidebar-width
-  position: fixed
-  width: 100%
-  transition: margin-left 0.3s
-  overflow-y: scroll
+
 
 // -------------------------------------
 //   Modifiers
 // -------------------------------------
 
-.main--push
-  margin-left: $sidebar-width + $subSidebar-width
+.input--noStyle
+  padding: 0
+  border: 0
+  background: rgba(0, 0, 0, 0)
+  &:focus
+    outline: 0
 
 // -------------------------------------
 //   States
 // -------------------------------------
+
 
 
 // -------------------------------------
@@ -35,4 +33,3 @@
 // -------------------------------------
 //   Scaffolding
 // -------------------------------------
-
