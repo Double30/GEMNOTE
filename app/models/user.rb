@@ -59,6 +59,7 @@ class User < ActiveRecord::Base
         repo.stargazers_count   = github_repo.stargazers_count
         repo.owner_id           = github_repo.owner.id
         repo.owner_name         = github_repo.owner.login
+        repo.owner_avatar       = github_repo.owner.avatar_url
       end
 
       starred_repo = repo.stars.find_or_initialize_by(user_id: id)
