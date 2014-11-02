@@ -1,0 +1,13 @@
+<div class="pageHeader">
+  <%= image_tag @repo.owner_avatar, class: 'pageHeader-avatar' %>
+  <h1 class="pageHeader-title"><%= repository_full_name(@repo) %></h1>
+  <div class="pageHeader-desc"><%= @repo.github_description %></div>
+</div>
+
+<div class="pageContent">
+  <ul class="tab">
+    <li class="tab-item"></li>
+    <li class="tab-item"></li>
+    <li class="tab-item"></li>
+  </ul>
+</div>
