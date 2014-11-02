@@ -1,0 +1,49 @@
+// *************************************
+//
+//   Tab
+//   -> Content switcher tab
+//
+// *************************************
+
+.tab
+  margin: 2em 0
+  padding: 0
+  border-bottom: 3px solid #eee
+  font-family: $b-fontFamily-heading
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+.tab-item
+  +single-transition(all, 0.3s)
+  cursor: pointer
+  display: inline-block
+  padding: 0.5em
+  margin: 0 0 -3px 0
+  line-height: 1em
+  color: #aaa
+  border-bottom: 3px solid transparent
+  &:hover
+    color: $c-text
+
+.tab-item.is_actived
+  border-bottom: 3px solid $c-border
+  color: $c-text
