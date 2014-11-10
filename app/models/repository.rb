@@ -5,7 +5,6 @@
 #  id                 :integer          not null, primary key
 #  name               :string(255)
 #  url                :string(255)
-#  description        :text
 #  created_at         :datetime
 #  updated_at         :datetime
 #  github_id          :integer
@@ -14,6 +13,7 @@
 #  stargazers_count   :integer
 #  owner_id           :integer
 #  owner_name         :string(255)
+#  owner_avatar       :string(255)
 #
 
 class Repository < ActiveRecord::Base

@@ -3,10 +3,13 @@ class RepositoriesController < ApplicationController
   def index
     current_user.update_starred_repo
     @repos = current_user.repositories
+
   end
 
   def show
-
+    if user_signed_in?
+      star_related
+    end
   end
 
   def update
@@ -23,6 +26,11 @@ class RepositoriesController < ApplicationController
   private
     def set_repo
        @repo = Repository.find(params[:id])
+    end
+
+    def star_related
+      @star = @repo.stars.find_by(user: current_user)
+      @notes = @star.notes
     end
 
     def repo_params
