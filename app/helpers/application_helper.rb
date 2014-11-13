@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def page_specific_id
+    "#{controller_name}_#{action_name}"
+  end
+
   def markdown(text)
     render_options = {
       filter_html:     true,

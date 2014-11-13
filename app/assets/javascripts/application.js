@@ -18,6 +18,7 @@
 //= require best_in_place
 //= require jquery-ui-widget
 //= require_self
+//= require repositories
 
 $().ready(function() {
   $('.best_in_place').best_in_place()
