@@ -1,0 +1,15 @@
+<div class="noteCard">
+  <div class="noteCard-tag tag tag--bomb">
+    Bomb
+  </div>
+  <div class="noteCard-created">
+    <%= render_note_created_time(note) %>
+
+  </div>
+  <div class="noteCard-name"><%= note.name %></div>
+  <div class="noteCard-bottom">
+    <div class="opBtn opBtn--edit noteCard-bottom-btn">
+      <span class="opBtn-icon gicon-write"></span>
+    </div>
+  </div>
+</div>
