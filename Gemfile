@@ -28,6 +28,8 @@ group :development do
   gem 'pry'
   gem 'annotate'
   gem 'hirb'
+  gem 'better_errors'
+  gem "binding_of_caller"
 end
 
 # css
