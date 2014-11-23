@@ -10,5 +10,7 @@ Gbox::Application.routes.draw do
 
   resources :notes
 
+  resources :users
+
   resources :categories, :only => [:index, :show]
 end

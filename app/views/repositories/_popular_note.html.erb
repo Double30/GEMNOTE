@@ -1,0 +1,28 @@
+<div class="noteCard">
+  <div class="noteCard-tag tag tag--bomb">
+    Bomb
+  </div>
+  <div class="noteCard-created">
+    <%= render_note_created_time(note) %>
+
+  </div>
+  <div class="noteCard-name"><%= note.name %></div>
+  <div class="noteCard-bottom">
+    <div class="userThumb userThumb--sm noteCard-bottom-creator">
+      <div class="userThumb-photo">
+        <%= image_tag note.user.image %>
+      </div>
+      <span class="userThumb-name">
+        <%= link_to note.user.name, users_path(note.user) %>
+      </span>
+    </div>
+    <div class="opBtn opBtn--save noteCard-bottom-btn">
+      <span class="opBtn-icon gicon-ribbon"></span>
+      <span class="opBtn-text">777</span>
+    </div>
+    <div class="opBtn noteCard-bottom-btn">
+      <span class="opBtn-icon gicon-speech-bubble"></span>
+      <span class="opBtn-text">321</span>
+    </div>
+  </div>
+</div>

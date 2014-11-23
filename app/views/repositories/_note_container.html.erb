@@ -1,10 +1,10 @@
 <div class="noteContainer">
   <div id="popular" class="tabContent noteContainer-list is_actived">
-popular
+    <%= render partial: 'popular_note', collection: @popular_notes, as: :note %>
   </div>
 
   <div id="mynote" class="tabContent noteContainer-list">
-mynote
+    <%= render partial: 'my_note', collection: @notes, as: :note %>
   </div>
 
   <div id="saved" class="tabContent noteContainer-list">

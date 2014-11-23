@@ -1,0 +1,72 @@
+// *************************************
+//
+//   Note Card
+//   -> description.
+//
+// *************************************
+
+$c-bottom-boder: $whitesmoke
+
+$horizontal-padding: 16px
+
+$noteTitle-fs: $b-h2
+$noteTitle-ff: $b-fontFamily-heading
+
+.noteCard
+  margin: 1em
+  max-width: 500px
+  background-color: $white
+  color: $c-text
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.noteCard-tag
+
+.noteCard-created
+  display: inline-block
+  float: right
+  font-size: $b-fontSize-s
+  margin: 0 1em
+  color: $c-text-hint
+  font-family: $noteTitle-ff
+  [class^="gicon-"], [class*=" gicon-"]
+    font-size: 1em
+    line-height: 1.5em
+.noteCard-name
+  +adjust-font-size-to($noteTitle-fs)
+  margin: rhythm(0.5, $noteTitle-fs) 0
+  font-family: $noteTitle-ff
+  padding: 0 em($horizontal-padding, $noteTitle-fs)
+
+.noteCard-bottom
+  +clearfix
+  border-top: 1px solid $c-bottom-boder
+  padding: 0.5em em($horizontal-padding)
+  line-height: 1em
+
+.noteCard-bottom-btn
+  float: right
+  display: inline-block
+  height: 2em
+  line-height: 2em
+  margin-left: 1em

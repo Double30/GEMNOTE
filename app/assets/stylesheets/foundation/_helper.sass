@@ -7,3 +7,9 @@
   line-height:   em($line-height-base * $b-fontSize, $font-size)
   margin-top:    em($top-base * $b-fontSize, $font-size)
   margin-bottom: em($bottom-base * $b-fontSize, $font-size)
+
+=clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both

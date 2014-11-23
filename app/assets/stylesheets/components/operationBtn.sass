@@ -1,22 +1,21 @@
 // *************************************
 //
-//   Page Header
-//   -> Header per Page.
+//   Operation Button
+//   -> for operation button. like save or comment.
 //
 // *************************************
-.pageHeader
-  +box-shadow(0 2px 1px darken($whitesmoke, 10%))
-  padding: 1em
-  padding-left: 6em
-  height: 6em
-  overflow: hidden
-  background-color: $white
+
+.opBtn
+  color: $c-text-hint
 
 // -------------------------------------
 //   Modifiers
 // -------------------------------------
 
-
+.opBtn--save
+  cursor: pointer
+  &:hover
+    color: $c-text-hover
 
 // -------------------------------------
 //   States
@@ -34,15 +33,5 @@
 //   Scaffolding
 // -------------------------------------
 
-.pageHeader-avatar
-  +border-radius(0.4em)
-  position: absolute
-  height: 4em
-  width: 4em
-  left: 1em
-
-.pageHeader-title
-  font-size: 1.4em
-  color: $c-text
-.pageHeader-desc
-  color: $c-text-hint
+.opBtn-icon
+  margin-right: 0

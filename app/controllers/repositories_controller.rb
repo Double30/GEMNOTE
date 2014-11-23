@@ -10,6 +10,7 @@ class RepositoriesController < ApplicationController
     if user_signed_in?
       star_related
     end
+    @popular_notes = popular_notes_for(@repo)
   end
 
   def update
@@ -30,10 +31,18 @@ class RepositoriesController < ApplicationController
 
     def star_related
       @star = @repo.stars.find_by(user: current_user)
-      @notes = @star.notes
+      @notes = @star.notes.includes(:user)
     end
 
     def repo_params
       params.require(:repository).permit(:description)
+    end
+
+    def popular_notes_for(repo)
+      results = []
+      repo.stars.each do |star|
+        results += star.notes
+      end
+      results
     end
 end

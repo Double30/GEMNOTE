@@ -1,0 +1,59 @@
+// *************************************
+//
+//   User Thumbnail
+//   -> description.
+//
+// *************************************
+
+.userThumb
+  display: inline-block
+  height: 4em
+  font-family: $b-fontFamily-heading
+  line-height: 0
+  white-space: nowrap
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+.userThumb--sm
+  height: 2em
+  .userThumb-photo
+    height: 2em
+    width: 2em
+
+  .userThumb-name
+    height: 2em
+    line-height: 2em
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.userThumb-photo
+  display: inline-block
+  img
+    max-width: 100%
+
+.userThumb-name
+  display: inline-block
+  height: 4em
+  margin-left: 0.2em
+  line-height: 4em
+  vertical-align: top
+  a
+    text-decoration: none
+    color: $c-text-hint
+  a:hover
+    color: $c-text-hover
