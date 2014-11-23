@@ -15,4 +15,6 @@ class Note < ActiveRecord::Base
   belongs_to :star
   belongs_to :user
   validates :name, uniqueness: {scope: :star_id }, presence: true
+  validates_presence_of :user_id
+  validates_presence_of :star_id
 end

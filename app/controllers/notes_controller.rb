@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :find_starred_repo, only: [:new, :create]
   def new
-    @note = @star.notes.build
+    @note = @star.notes.build(user: current_user)
   end
 
   def show
@@ -10,9 +10,11 @@ class NotesController < ApplicationController
 
   def create
     @note = @star.notes.build(note_params)
+    @note.user_id = current_user.id
     if @note.save
       redirect_to @star
     else
+      flash[:error] = @note.errors.full_messages
       render :new
     end
   end
@@ -37,7 +39,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:star_id, :content, :name)
+    params.require(:note).permit(:star_id, :content, :name, :user_id)
   end
 
 end
