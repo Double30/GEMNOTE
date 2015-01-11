@@ -6,7 +6,7 @@
     <%= render_note_created_time(note) %>
 
   </div>
-  <div class="noteCard-name"><%= note.name %></div>
+  <div class="noteCard-name"><%= link_to note.name, note_path(note) %></div>
   <div class="noteCard-bottom">
     <div class="userThumb userThumb--sm noteCard-bottom-creator">
       <div class="userThumb-photo">

@@ -6,10 +6,11 @@
 // *************************************
 
 .header
+  position: relative
   color: $c-text-invert
   height: $header-height
   margin-bottom: $b-space
-  padding: 0 $b-space-s
+  padding: 0 $b-containerPadding
 
 // -------------------------------------
 //   Modifiers
@@ -23,7 +24,7 @@
 
 .header--search
   margin-bottom: 0
-  padding-left: $header-height/2 + 32px
+  padding-left: $b-containerPadding
   background-color: $halfPearlLusta
   &:before
     content: "\e036"

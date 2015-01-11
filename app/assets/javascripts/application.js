@@ -12,13 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require_tree ./editor
-//= require bootstrap
 //= require icheck.min
 //= require best_in_place
 //= require jquery-ui-widget
 //= require_self
 //= require repositories
+//= require_tree ./components
 
 $().ready(function() {
   $('.best_in_place').best_in_place()

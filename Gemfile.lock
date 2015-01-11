@@ -60,6 +60,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (4.0.2)
+    awesome_print (1.2.0)
     bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
@@ -108,9 +109,17 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
+    handlebars_assets (0.18)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     hashie (3.2.0)
     hike (1.2.3)
     hirb (0.7.2)
+    hologram (1.2.0)
+      redcarpet (>= 2.2, < 4.0)
+      rouge (>= 1.5)
     i18n (0.6.11)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -221,6 +230,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  awesome_print
   best_in_place!
   better_errors
   binding_of_caller
@@ -228,7 +238,9 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-rails
   devise
+  handlebars_assets
   hirb
+  hologram
   jbuilder (~> 1.2)
   jquery-rails
   octokit (~> 3.0)

@@ -1,7 +1,7 @@
-<%= simple_form_for [@star, @note] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
+<%= form_for [@star, @note] do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
 <% end %>
 
 <script>

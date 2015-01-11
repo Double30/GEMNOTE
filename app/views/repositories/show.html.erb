@@ -2,9 +2,19 @@
   <%= image_tag @repo.owner_avatar, class: 'pageHeader-avatar' %>
   <h1 class="pageHeader-title"><%= repository_full_name(@repo) %></h1>
   <div class="pageHeader-desc"><%= @repo.github_description %></div>
+  <button data-toggle="modal" data-target="#newNote">新增筆記</button>
 </div>
 
 <div class="pageContent">
   <%= render 'note_tab' %>
   <%= render 'note_container' %>
+</div>
+
+
+<div class="modal" id="newNote">
+  <a class="modal-close">×</a>
+  <%= form_for [@star, @note] do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
 </div>

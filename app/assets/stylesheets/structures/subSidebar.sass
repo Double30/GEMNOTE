@@ -6,12 +6,14 @@
 // *************************************
 
 .subSidebar
-  background-color: $subSidebar-background-color
-  height: 100%
+  +single-transition( left, 0.3s)
   position: absolute
-  right: 0
+  display: none
   top: 0
+  left: 0
+  height: 100%
   width: $subSidebar-width
+  background-color: $subSidebar-background-color
 
 // -------------------------------------
 //   Modifiers
@@ -29,8 +31,6 @@
 //   Context
 // -------------------------------------
 
-.has-subSidebar
-  padding-right: $subSidebar-width
 
 // -------------------------------------
 //   Scaffolding

@@ -1,0 +1,43 @@
+// *************************************
+//
+//   Modal
+//   -> modal.
+//
+// *************************************
+
+.modal
+  position: fixed
+  top: 200px
+  right: 0
+  left: 0
+
+  display: none
+  width: 50%
+  margin: 0 auto
+  padding: rhythm(1) 1em
+  z-index: 99
+
+  background-color: $white
+
+.modal-close
+  position: absolute
+  right: 5px
+  top: 5px
+
+
+.modal.is-active
+  display: block
+
+.modal-mask
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+
+  display: none
+  width: 100%
+  background-color: rgba(0,0,0,0.2)
+
+.modal-mask.is-active
+  display: block

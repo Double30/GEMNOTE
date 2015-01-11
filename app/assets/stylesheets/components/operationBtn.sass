@@ -5,19 +5,26 @@
 //
 // *************************************
 
-.opBtn
+.opBtn,
+a.opBtn
   color: $c-text-hint
+  text-decoration: none
+  &:hover, &:active
+    color: $c-text-hint
+
 
 // -------------------------------------
 //   Modifiers
 // -------------------------------------
 
-.opBtn--save
+.opBtn--save,
+a.opBtn--save
   cursor: pointer
   &:hover
     color: $c-text-hover
 
-.opBtn--edit
+.opBtn--edit,
+a.opBtn--edit
   cursor: pointer
   &:hover
     color: $c-text-hover

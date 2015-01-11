@@ -1,7 +1,7 @@
 class RepositoriesController < ApplicationController
   before_action :set_repo, only: [ :show, :update ]
   def index
-    current_user.update_starred_repo
+    # current_user.update_starred_repo
     @repos = current_user.repositories
 
   end
@@ -9,6 +9,7 @@ class RepositoriesController < ApplicationController
   def show
     if user_signed_in?
       star_related
+      @note = @star.notes.build
     end
     @popular_notes = popular_notes_for(@repo)
   end

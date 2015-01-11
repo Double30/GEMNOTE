@@ -1,3 +1,9 @@
-<h1><%= link_to @note.name, note_path(@note) %></h1>
-<%= link_to "編輯", edit_note_path(@note) %>
-<div><%= markdown(@note.content) %></div>
+<div class="pageHeader">
+  <h1><%= @note.name %></h1>
+  <%= link_to "編輯", edit_note_path(@note) %>
+</div>
+<div class="pageContent">
+  <div class="noteContent">
+    <div><%= markdown(@note.content) %></div>
+  </div>
+</div>

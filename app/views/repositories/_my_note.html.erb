@@ -8,8 +8,8 @@
   </div>
   <div class="noteCard-name"><%= note.name %></div>
   <div class="noteCard-bottom">
-    <div class="opBtn opBtn--edit noteCard-bottom-btn">
-      <span class="opBtn-icon gicon-write"></span>
-    </div>
+  <%= link_to edit_note_path(note), class: "opBtn opBtn--edit noteCard-bottom-btn" do %>
+    <span class="opBtn-icon gicon-write"></span>
+  <% end %>
   </div>
 </div>

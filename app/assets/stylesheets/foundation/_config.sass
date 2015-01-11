@@ -65,10 +65,13 @@ $b-boxShadow: 0 2px 0 rgba($jet, 0.25)
 
 // ----- Typography ----- //
 
-$b-fontFamily-heading: Arial, Helvetica, sans-serif
-$b-fontFamily: 'OpenSans', sans-serif
+$b-fontFamily-heading: 'Open Sans', helvetica, arial, 'Heiti TC', 'Microsoft YaHei', sans-serif
+$b-fontFamily-serif:   Georgia, Cambria, "Times New Roman", Times, BiauKai, DFKai-sb, serif
+$b-fontFamily:         $b-fontFamily-heading
+$b-fontFamily-code:    'Source Code Pro', monospace
 $b-fontSize: 16px
 $b-lineHeight: 24px
+$b-lineHeight-em: em($b-lineHeight)
 $b-fontSize-s: 75%
 $b-fontSize-m: 90%
 $b-fontSize-l: 115%
@@ -87,6 +90,8 @@ $b-space-xs: 0.2 * $b-space
 $b-space-s: 0.5 * $b-space
 $b-space-l: 2 * $b-space
 $b-space-xl: 4 * $b-space
+
+$b-containerPadding: 6em
 
 // -------------------------------------
 //   Components

@@ -12,7 +12,7 @@ class NotesController < ApplicationController
     @note = @star.notes.build(note_params)
     @note.user_id = current_user.id
     if @note.save
-      redirect_to @star
+      render :edit
     else
       flash[:error] = @note.errors.full_messages
       render :new

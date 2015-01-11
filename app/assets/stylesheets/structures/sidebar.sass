@@ -6,11 +6,12 @@
 // *************************************
 
 .sidebar
-  background-color: $sidebar-background-color
-  height: 100%
-  left: 0
   position: fixed
-  width: $sidebar-width + $subSidebar-width
+  left: 0
+  height: 100%
+  width: $sidebar-width
+  background-color: $sidebar-background-color
+  z-index: 2
 
 // -------------------------------------
 //   Modifiers
@@ -19,6 +20,13 @@
 // -------------------------------------
 //   States
 // -------------------------------------
+
+.sidebar.is-open
+  .sidebar-mask
+    display: block
+  .subSidebar
+    display: block
+    left: $sidebar-width
 
 // -------------------------------------
 //   Context
@@ -54,3 +62,14 @@
   +rhythm(0, 0.5, 0.5, 0, 16px)
   &:hover
     background-color: lighten($c-background-invert, 5%)
+
+.sidebar-mask
+  position: fixed
+  top: 0
+  left: 0
+  // display: block
+  display: none
+  width: 100%
+  height: 100vh
+  z-index: -1
+  background-color: rgba(0,0,0, 0.2)
